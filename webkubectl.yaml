@@ -18,6 +18,7 @@ spec:
       containers:
       - name: webkubectl
         image: registry.cn-hangzhou.aliyuncs.com/wanghaiqing/webkubectl:latest
+        imagePullPolicy: IfNotPresent
         securityContext:
           privileged: true
         ports:
