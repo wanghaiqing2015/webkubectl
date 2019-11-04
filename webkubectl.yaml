@@ -1,0 +1,41 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: webkubectl
+  labels:
+    app: webkubectl
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      k8s-app: webkubectl
+  template:
+    metadata:
+      labels:
+        k8s-app: webkubectl
+    spec:
+      containers:
+      - name: webkubectl
+        image: registry.cn-hangzhou.aliyuncs.com/wanghaiqing/webkubectl:latest
+        securityContext:
+          privileged: true
+        ports:
+        - containerPort: 18080
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webkubectl-service
+  labels:
+    app: webkubectl-service
+    kubernetes.io/cluster-service: "true"
+spec:
+  selector:
+    k8s-app: webkubectl
+  ports:
+  - port: 18080
+    targetPort: 18080
+    nodePort: 38080
+  type: NodePort

@@ -11,3 +11,5 @@ exit 0
 docker run -d --name="webkubectl" -p 38080:18080 --privileged registry.cn-hangzhou.aliyuncs.com/wanghaiqing/webkubectl:latest
 
 http://103.45.112.173:38080/
+
+kubectl apply -f webkubectl.yaml
