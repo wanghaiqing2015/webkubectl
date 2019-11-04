@@ -9,8 +9,8 @@ ENV GOARCH=amd64
 
 RUN apk add --update git && \
   mkdir -p /tmp/gotty && \
-  export GOPATH=/tmp/gotty && go get -d github.com/webkubectl/gotty && \
-  cd $GOPATH/src/github.com/webkubectl/gotty && go build && \
+  export GOPATH=/tmp/gotty && go get -d github.com/wanghaiqing2015/gotty && \
+  cd $GOPATH/src/github.com/wanghaiqing2015/gotty && go build && \
   cp gotty / && \
   ls /gotty
 
