@@ -39,6 +39,6 @@ RUN chmod -R 700 /opt/webkubectl
 ENV SESSION_STORAGE_SIZE=10M
 ENV WELCOME_BANNER="Welcome to Web Kubectl, try kubectl --help."
 ENV KUBECTL_INSECURE_SKIP_TLS_VERIFY=true
-ENV GOTTY_OPTIONS="--port 8080 --permit-write --permit-arguments"
+ENV GOTTY_OPTIONS="--port 18080 --permit-write --permit-arguments"
 
 CMD ["sh","/opt/webkubectl/start-webkubectl.sh"]
