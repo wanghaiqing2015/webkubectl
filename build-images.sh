@@ -1,5 +1,5 @@
 
-docker build -t webkubectl:latest $PWD
+docker build --no-cache -t webkubectl:latest $PWD
 
 docker login --username=krman_1@163.com registry.cn-hangzhou.aliyuncs.com
 
