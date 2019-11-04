@@ -15,4 +15,6 @@ docker run -d --name="webkubectl" -p 38080:18080 --privileged registry.cn-hangzh
 
 http://103.45.112.173:38080/
 
+http://103.45.106.156:38080/
+
 
